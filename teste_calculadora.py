@@ -1,37 +1,32 @@
 import pytest
 from calculadora import Calculadora
 
-# Instanciando a classe Calculadora
 calc = Calculadora()
-
-# Testes de soma
+#Teste de Soma
 def test_somar():
     assert calc.somar(2, 3) == 5
     assert calc.somar(-1, 1) == 0
     assert calc.somar(0, 0) == 0
-
-# Testes de subtração
+#Teste de Subtração
 def test_subtrair():
     assert calc.subtrair(5, 3) == 2
     assert calc.subtrair(1, 1) == 0
     assert calc.subtrair(-2, -3) == 1
-
-# Testes de multiplicação
+#Teste de multiplicação
 def test_multiplicar():
     assert calc.multiplicar(2, 3) == 6
     assert calc.multiplicar(0, 1) == 0
     assert calc.multiplicar(-1, 5) == -5
-
-# Testes de divisão
+#Teste de Divisão
 def test_dividir():
     assert calc.dividir(6, 3) == 2
     assert calc.dividir(9, 3) == 3
 
-    # Teste de divisão por zero
+    #Teste de divisão por zero
     with pytest.raises(ValueError):
         calc.dividir(1, 0)
 
-# Testes de fatorial
+#Testes de fatorial
 def test_fatorial():
     assert calc.fatorial(5) == 120
     assert calc.fatorial(0) == 1  # Fatorial de 0 é 1
